@@ -1,2 +1,2 @@
-# c-wulf-resume
-A website build for Caitlin Wulf's professional resume
+# c-wingerd-resume
+A website build for Caitlin Wingerd's professional resume
