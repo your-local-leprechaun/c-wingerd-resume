@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "DM Serif Text", serif;
+    color: black;
+}
+
+body {
+    /* background-color: rgb(255, 255, 255); */
+    background-color: #F1F1F2;
+}
+
+nav {
+    background-color: #F1F1F2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0px 25px 0px 15px;
+}
+
+nav > .title {
+    font-size: 2em;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 23px;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    text-decoration: underline transparent;
+}
+
+nav > ul > li > a:hover {
+    color: rgb(85, 85, 85);
+    text-decoration: underline rgb(100, 100, 100);
+    transition: all 0.3s ease-in-out;
+}
