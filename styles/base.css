@@ -3,18 +3,20 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-family: "DM Serif Text", serif;
     color: black;
-}
-
-body {
-    /* background-color: rgb(255, 255, 255); */
     background-color: #F1F1F2;
 }
 
+body {
+    background-color: transparent;
+}
+
+/* ── Navigation ── */
 nav {
     background-color: #F1F1F2;
     display: flex;
@@ -22,10 +24,14 @@ nav {
     justify-content: space-between;
     height: 60px;
     padding: 0px 25px 0px 15px;
+    position: relative;
+    z-index: 10;
 }
 
 nav > .title {
     font-size: 2em;
+    text-decoration: none;
+    color: black;
 }
 
 nav > ul {
@@ -38,11 +44,226 @@ nav > ul > li > a {
     text-decoration: none;
     color: black;
     font-size: 1.3em;
-    text-decoration: underline transparent;
+    text-underline-offset: 3px;
+    transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
 }
 
 nav > ul > li > a:hover {
     color: rgb(85, 85, 85);
     text-decoration: underline rgb(100, 100, 100);
-    transition: all 0.3s ease-in-out;
+}
+
+nav > ul > li > a.active {
+    text-decoration: underline black;
+}
+
+/* ── Page section icon ── */
+.page-icon {
+    display: block;
+    font-size: 1.7em;
+    color: #5c8e56;
+    margin-bottom: 0.35em;
+}
+
+/* ── Inner page header (transparent — shows E. coli canvas) ── */
+.page-header {
+    text-align: center;
+    padding: 60px 40px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3em;
+}
+
+.page-header .subheading {
+    font-size: 1.1em;
+    color: rgb(90, 90, 90);
+    font-style: italic;
+    margin-top: 0.6em;
+}
+
+/* ── Content section (opaque — hides canvas) ── */
+.content-section {
+    background-color: #F1F1F2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px 40px 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Full-width opaque wrapper (used when content should span full width) ── */
+.content-band {
+    background-color: #F1F1F2;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── E. coli reveal strip (transparent — shows canvas before footer) ── */
+.ecoli-strip {
+    height: 140px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Footer ── */
+footer {
+    background-color: #F1F1F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    padding: 24px 20px;
+    color: rgb(140, 140, 140);
+    font-size: 0.9em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-links {
+    display: flex;
+    gap: 22px;
+}
+
+.footer-links a {
+    color: rgb(160, 160, 160);
+    font-size: 1.15em;
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+.footer-links a:hover {
+    color: #5c8e56;
+}
+
+/* ── Hamburger button (hidden on desktop) ── */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 4px;
+    flex-shrink: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Shrink nav fonts at 1000px ── */
+@media (max-width: 1000px) {
+    nav > .title {
+        font-size: 1.65em;
+    }
+
+    nav > ul {
+        gap: 16px;
+    }
+
+    nav > ul > li > a {
+        font-size: 1.05em;
+    }
+}
+
+/* ── Hamburger at 750px ── */
+@media (max-width: 750px) {
+    nav {
+        height: auto;
+        min-height: 60px;
+        padding: 0 15px;
+    }
+
+    nav > .title {
+        font-size: 1.5em;
+        padding: 14px 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Overlay dropdown — absolutely positioned so it floats over page content */
+    nav > ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #F1F1F2;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 4px 15px 14px;
+        gap: 0;
+        z-index: 100;
+        /* Hidden state */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease;
+    }
+
+    nav > ul.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    nav > ul > li > a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1em;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    nav > ul > li:last-child > a {
+        border-bottom: none;
+    }
+}
+
+/* ── Page content scaling ── */
+@media (max-width: 600px) {
+
+    .page-header h1 {
+        font-size: 2.2em;
+    }
+
+    .content-section {
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .page-header {
+        padding: 24px 16px 18px;
+    }
+
+    .page-header h1 {
+        font-size: 1.9em;
+    }
+
+    .content-section {
+        padding: 20px 16px 30px;
+    }
 }

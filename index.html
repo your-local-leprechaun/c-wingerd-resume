@@ -4,34 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Caitlin C. Wingerd</title>
-    <!-- <link rel="stylesheet" href="styles/base.css">  -->
-     <link rel="stylesheet" href="./styles/base.css">
-
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+    <canvas id="ecoli-canvas"></canvas>
+
     <nav>
-        <p class="title">Caitlin C. Wingerd</p>
+        <a href="index.html" class="title">Caitlin C. Wingerd</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="cv-about.html">CV & About</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Publications</a></li>
-            <li><a href="#">Awards</a></li>
-            <li><a href="#">Volunteering</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="cv-about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="volunteering.html">Volunteering</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="hero">
             <h1>Caitlin C. Wingerd</h1>
-            <p class="subheading">Some under text</p>
+            <p class="subtitle">PhD Candidate &middot; Ohio State University</p>
+            <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
 
+        <div class="content-band">
+            <div class="content-section home-content">
 
+                <div class="home-intro">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <a href="cv-about.html" class="text-link">More about Caitlin &rarr;</a>
+                </div>
+
+                <hr class="section-rule">
+
+                <div class="card-grid">
+                    <a href="research.html" class="nav-card">
+                        <i class="fa-solid fa-flask nav-card-icon"></i>
+                        <h3>Research</h3>
+                        <p>Investigating lorem ipsum regulatory mechanisms in <em>E. coli</em> and related systems.</p>
+                    </a>
+                    <a href="publications.html" class="nav-card">
+                        <i class="fa-solid fa-book-open nav-card-icon"></i>
+                        <h3>Publications</h3>
+                        <p>Peer-reviewed contributions to the field of lorem ipsum microbiology.</p>
+                    </a>
+                    <a href="awards.html" class="nav-card">
+                        <i class="fa-solid fa-medal nav-card-icon"></i>
+                        <h3>Awards</h3>
+                        <p>Fellowships, honors, and recognition for academic and research excellence.</p>
+                    </a>
+                    <a href="volunteering.html" class="nav-card">
+                        <i class="fa-solid fa-seedling nav-card-icon"></i>
+                        <h3>Volunteering</h3>
+                        <p>Outreach, mentorship, and service to the scientific community.</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
     </main>
+
+    <div class="ecoli-strip"></div>
+
+    <footer>
+        <p>Caitlin C. Wingerd &middot; 2025</p>
+        <div class="footer-links">
+            <a href="mailto:#" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/caitlin-wingerd-0994a51b2/" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://orcid.org/0000-0003-1306-1307" title="ORCID" target="_blank" rel="noopener"><i class="fa-brands fa-orcid"></i></a>
+            <a href="https://microbiology.osu.edu/people/wulf.187" title="OSU Microbiology" target="_blank" rel="noopener"><i class="fa-solid fa-building-columns"></i></a>
+        </div>
+    </footer>
+
+    <script src="./js/ecoli.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>

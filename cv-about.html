@@ -4,39 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CV & About</title>
-    <!-- <link rel="stylesheet" href="styles/base.css">  -->
+    <title>About &mdash; Caitlin C. Wingerd</title>
     <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="./styles/cv-about-styles.css"
-
+    <link rel="stylesheet" href="./styles/inner-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+    <canvas id="ecoli-canvas"></canvas>
+
     <nav>
-        <p class="title">Caitlin C. Wingerd</p>
+        <a href="index.html" class="title">Caitlin C. Wingerd</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">CV & About</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Publications</a></li>
-            <li><a href="#">Awards</a></li>
-            <li><a href="#">Volunteering</a></li>
+            <li><a href="cv-about.html" class="active">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="volunteering.html">Volunteering</a></li>
         </ul>
     </nav>
 
     <main>
-        <div class="hero">
-            <h1>CV & About</h1>
-            <p class="subheading">Some under text</p>
-        </div>
-        <div class="cv">
-            <iframe src="https://drive.google.com/file/d/10E09speEdJpyT8EomfZFo0toynonaTDcL3v23yCrb9w/preview"
-                style="width: 60%; height: 60vh; border: 0; margin: 0 auto;"></iframe>
-
+        <div class="page-header">
+            <h1>About</h1>
+            <p class="subheading">Background, interests, and curriculum vitae</p>
         </div>
 
+        <div class="content-band">
+            <div class="content-section">
+
+                <div class="about-content">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
+                </div>
+
+                <div class="cv-content">
+                    <div class="cv-header">
+                        <h2>Curriculum Vitae</h2>
+                        <a href="https://drive.google.com/file/d/10E09speEdJpyT8EomfZFo0toynonaTDcL3v23yCrb9w/view"
+                            target="_blank" rel="noopener" class="cv-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open full CV
+                        </a>
+                    </div>
+                    <div class="cv-embed-wrapper">
+                        <iframe src="https://drive.google.com/file/d/10E09speEdJpyT8EomfZFo0toynonaTDcL3v23yCrb9w/preview"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
+
+    <div class="ecoli-strip"></div>
+
+    <footer>
+        <p>Caitlin C. Wingerd &middot; 2025</p>
+        <div class="footer-links">
+            <a href="mailto:#" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/caitlin-wingerd-0994a51b2/" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://orcid.org/0000-0003-1306-1307" title="ORCID" target="_blank" rel="noopener"><i class="fa-brands fa-orcid"></i></a>
+            <a href="https://microbiology.osu.edu/people/wulf.187" title="OSU Microbiology" target="_blank" rel="noopener"><i class="fa-solid fa-building-columns"></i></a>
+        </div>
+    </footer>
+
+    <script src="./js/ecoli.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>

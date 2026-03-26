@@ -1,0 +1,148 @@
+/* ── Canvas ── */
+#ecoli-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ── Hero ── */
+.hero {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 0.25em;
+    letter-spacing: -0.01em;
+}
+
+.hero .subtitle {
+    font-size: 1.35em;
+    color: rgb(70, 70, 70);
+    margin-bottom: 1em;
+}
+
+.hero .tagline {
+    font-size: 1.05em;
+    color: rgb(95, 95, 95);
+    font-style: italic;
+    max-width: 540px;
+    line-height: 1.65;
+}
+
+/* ── Home content (below hero) ── */
+.home-intro {
+    text-align: center;
+}
+
+.home-intro p {
+    font-size: 1.05em;
+    line-height: 1.85;
+    color: rgb(50, 50, 50);
+    max-width: 680px;
+    margin: 0 auto 1.4em;
+}
+
+.text-link {
+    color: black;
+    font-size: 1em;
+    font-style: italic;
+    text-underline-offset: 3px;
+    transition: color 0.25s;
+}
+
+.text-link:hover {
+    color: #5c8e56;
+}
+
+/* ── Section divider ── */
+.section-rule {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+/* ── Nav cards ── */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.nav-card {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 28px 30px;
+    transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.nav-card:hover {
+    border-color: #5c8e56;
+    transform: translateY(-2px);
+}
+
+.nav-card-icon {
+    display: block;
+    font-size: 1.5em;
+    color: #5c8e56;
+    margin-bottom: 0.5em;
+}
+
+.nav-card h3 {
+    font-size: 1.35em;
+    margin-bottom: 0.35em;
+}
+
+.nav-card p {
+    font-size: 0.95em;
+    color: rgb(75, 75, 75);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ── Mobile ── */
+@media (max-width: 660px) {
+    .hero h1 {
+        font-size: 2.8em;
+    }
+
+    .hero .subtitle {
+        font-size: 1.1em;
+    }
+
+    .hero .tagline {
+        font-size: 0.98em;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero .subtitle {
+        font-size: 1em;
+    }
+}
