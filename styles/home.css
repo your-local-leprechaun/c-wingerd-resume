@@ -38,7 +38,7 @@
     font-size: 1.05em;
     color: rgb(95, 95, 95);
     font-style: italic;
-    max-width: 540px;
+    max-width: 600px;
     line-height: 1.65;
 }
 
@@ -125,7 +125,7 @@
     }
 
     .hero .tagline {
-        font-size: 0.98em;
+        font-size: 0.9em;
     }
 
     .card-grid {
